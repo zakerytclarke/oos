@@ -1,39 +1,29 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<title>
+</title>    
 <style>
-#div1 {
-    width: 350px;
-    height: 70px;
-    padding: 10px;
-    border: 1px solid #aaaaaa;
-}
-</style>
-<script>
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}
-</script>
-</head>
+.container{
+    background-color:blue;
+    padding:30px;
+    overflow:hidden;
+    font-size:50px;
+    margin:10px;
+    with:50px;
+    height:50px;
+    }
+    </style>
+</head> 
 <body>
-
-<p>Drag the W3Schools image into the rectangle:</p>
-
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style="width:25%;"></div>
-<br>
-<h1 id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
-Hi!
-</h1>  
+<div class="container">
+</div>
+<div class="container">
+</div>  
+<div class="container">
+</div>  
+<div class="container">
+</div>      
 </body>
 </html>
 
