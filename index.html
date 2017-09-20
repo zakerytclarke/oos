@@ -20,14 +20,10 @@
     </style>
 </head> 
 <body style="background-color:grey;">
-
-  <h1 draggable="true">
-    Hi!
-    </h1>
 <script>
     var x=0;
     while(x<32){
-        document.write("<div class='container' ondrop='drop(event)' ondragover='allowDrop(event)'></div>");
+        document.write("<div class='container' ondrop='drop(event)' ondragover='allowDrop(event)' id='c"+x+"'></div>");
         x++;   
     }
     
@@ -46,6 +42,12 @@ function drop(ev) {
     ev.target.appendChild(document.getElementById(data));
 }
     </script>
-</body>
+
+
+  <h1 draggable="true">
+    Hi!
+    </h1>
+    
+    </body>
 </html>
 
