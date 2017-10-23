@@ -2,52 +2,137 @@
 <html>
 <head>
 <title>
-    Online Operating System
+::OOS::
 </title>    
 <style>
 .container{
-    background-color:#0099ff;
-    padding:30px;
-    overflow:hidden;
-    font-size:50px;
-    margin:10px;
-    width:10vh;
-    height:10vh;
-    float:left;
-    text-align:center
-    color:white;
-    }
-    </style>
-</head> 
-<body style="background-color:grey;">
+height:500px;
+width:500px;
+overflow:hidden;
+position:absolute;
+z-index:1000;
+background-color:red;
+}
+.toolbar{
+height:10%;
+color:black;
+background-color:silver;
+}
+.window{
+width:100%;
+height:90%;
+}
+.appimg{
+border-radius:50%;
+width:100%;
+}
+.appframe{
+width:500px;
+height:70%;
+background-color:silver;
+z-index:101;
+position:fixed;
+top:25%;
+text-align:center;
+float:left; 
+border-radius:2%;
+display:none;
+}
+.appcontainer{
+border:1px black solid;
+border-radius:5%;
+width:12vh;
+height:12vh;
+float:left;
+padding:5px;
+margin:5px;
+}
+.arrow-up {
+position:fixed;
+width: 0; 
+height: 0;
+top:21%;
+left:2%;
+z-index:99;
+border-left:40px solid transparent;
+border-right:40px solid transparent;
+border-bottom:40px solid silver;
+display:none;
+}
+
+</style>
+<img id="bg" src="bg4.jpg" style="position:fixed;top:0;left:0;z-index:-100">
+<div id="arrow" class="arrow-up"></div>
+<div class-"appcontainer" style="width:10vw;">
+<img src="oo.jpg" class="appimg" style="border:3px solid black;" onclick="menu()">
+</div>
+<div id="prgmbar" style="float:left;">
+</div>
+<div style="margin:5px;position:fixed;float:right;top:0;right:0;z-index:100;background-color:silver;width:10vw;height:10vw;border-radius:50%;text-align:center;border:3px solid black;">
+<h3>
+10/23/17
+</h3>
+<h3>
+11:24
+</h3>
+</div>
+
+<div id="appbox" class="appframe" style="display:none;">
+<div class="appcontainer" onclick="newframe('Google','https://google.com')">
+<img class="appimg" src="appgoog.png">
+</div>
+<div class="appcontainer" onclick="newframe('Gmail','https://mail.google.com')">
+<img class="appimg" src="appgmail.png">
+</div>
+<div class="appcontainer" onclick="newframe('Feedly','https://feedly.com/')">
+<img class="appimg" src="appfeed.png">
+</div>
+<div class="appcontainer" onclick="newframe('Youtube','https://www.youtube.com/')">
+<img class="appimg" src="appyoutube.png">
+</div>
+<div class="appcontainer" onclick="newframe('Spotify','https://www.spotify.com/')">
+<img class="appimg" src="appspotify.png">
+</div>
+<div class="appcontainer" onclick="newframe('Drive','https://drive.google.com')">
+<img class="appimg" src="appdrive.ico">
+</div>
+<div class="appcontainer" onclick="newframe('Desmos','https://www.desmos.com/calculator')">
+<img class="appimg" src="appdesmos.png">
+</div>
+<div class="appcontainer" onclick="newframe('Word','https://office.live.com/start/Word.aspx')">
+<img class="appimg" src="appword.png">
+</div>
+<div class="appcontainer" onclick="newframe('Powerpoint','https://office.live.com/start/PowerPoint.aspx')">
+<img class="appimg" src="apppowerpoint.png">
+</div>
+<div class="appcontainer" onclick="newframe('Excel','https://office.live.com/start/Excel.aspx')">
+<img class="appimg" src="appexcel.ico">
+</div>
+<div class="appcontainer" onclick="newframe('About','https://github.com/zakerytclarke/oos')">
+<img class="appimg" src="appgithub.gif">
+</div>
+
+</div>
+
 <script>
-    var x=0;
-    while(x<32){
-        document.write("<div class='container' ondrop='drop(event)' ondragover='allowDrop(event)' id='c"+x+"'></div>");
-        x++;   
-    }
-    
-    
-function allowDrop(ev) {
-    ev.preventDefault();
+if(window.innerHeight<window.innerWidth){
+document.getElementById("bg").style.height=window.innerHeight;
+}else{
+document.getElementById("bg").style.width=window.innerWidth;
 }
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
+function newframe(name,url){
+//document.getElementById("prgmbar").innerHTML=document.getElementById("prgmbar").innerHTML+name;
+window.open(url,name,'width=500px,height=500px');
 }
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+function menu(){
+if(document.getElementById("appbox").style.display=="none"){
+document.getElementById("appbox").style.display="block";
+document.getElementById("arrow").style.display="block";
+}else{
+document.getElementById("appbox").style.display="none";
+document.getElementById("arrow").style.display="none";
 }
-    </script>
-
-
-  <h1 draggable="true">
-    Hi!
-    </h1>
-    
-    </body>
+}
+</script>
+</body>
 </html>
-
