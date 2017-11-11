@@ -126,8 +126,27 @@ document.getElementById("bg").style.height=window.innerHeight;
 document.getElementById("bg").style.width=window.innerWidth;
 }
 setInterval(function(){ uptime(); }, 500);  
+    var myCookie = getCookie("bgi");
+    if (myCookie == null) {
+        document.cookie="bgi=https://zakerytclarke.github.io/oos/bg4.jpg";
+        document.cookie="bgw=https://codepen.io/zakerytclarke/full/WXpZVL/";
+    
+    }
+    else {
+        document.getElementById("bg").src=readcookie("bgi");  
+        document.getElementById("bgw").src=readcookie("bgw");
+    }
   
-  
+function readcookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}  
 function newframe(name,url){
 //document.getElementById("prgmbar").innerHTML=document.getElementById("prgmbar").innerHTML+name;
 window.open(url,name,'width=500px,height=500px');
@@ -165,8 +184,38 @@ document.getElementById("date").innerHTML=today;
   
 function chbg(){
 document.getElementById("bg").src=document.getElementById("bgtxt").value;  
-document.getElementById("bgw").src=document.getElementById("bgtxtw").value;  
+document.getElementById("bgw").src=document.getElementById("bgtxtw").value;
+document.cookie="bgi="+document.getElementById("bgtxt").value;
+document.cookie="bgw="+document.getElementById("bgtxtw").value;  
 }  
+  
+  
+function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) return null;
+    }
+    else
+    {
+        begin += 2;
+        var end = document.cookie.indexOf(";", begin);
+        if (end == -1) {
+        end = dc.length;
+        }
+    }
+    // because unescape has been deprecated, replaced with decodeURI
+    //return unescape(dc.substring(begin + prefix.length, end));
+    return decodeURI(dc.substring(begin + prefix.length, end));
+} 
+
+
+  
+  
+  
+  
 </script>
 </body>
 </html>
