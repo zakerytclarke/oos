@@ -6,7 +6,6 @@
 </title>    
 <style>
 .container{
-height:500px;
 width:500px;
 overflow:hidden;
 position:absolute;
@@ -115,9 +114,9 @@ display:none;
 <img class="appimg" src="appgithub.gif">
 </div>
 <br>
-<input id="bgtxt" type="text" value="https://zakerytclarke.github.io/oos/bg4.jpg" placeholder="Background Image URL" style="width:80%;padding:6%;"onblur="chbg();">  
+<input id="bgtxt" type="text" value="https://zakerytclarke.github.io/oos/bg4.jpg" placeholder="Background Image URL" style="border-radius:5%;width:80%;padding:6%;"onblur="chbg();">  
   <br>
-<input id="bgtxtw" type="text" value="https://codepen.io/zakerytclarke/full/WXpZVL/" placeholder="Codepen Widget URL" style="width:80%;padding:6%;"onblur="chbg();">  
+<input id="bgtxtw" type="text" value="https://codepen.io/zakerytclarke/full/WXpZVL/" placeholder="Codepen Widget URL" style="border-radius:5%;width:80%;padding:6%;"onblur="chbg();">  
 </div>
 
 <script>
@@ -126,7 +125,7 @@ document.getElementById("bg").style.height=window.innerHeight;
 }else{
 document.getElementById("bg").style.width=window.innerWidth;
 }
-setInterval(function(){ uptime(); }, 1000);  
+setInterval(function(){ uptime(); }, 500);  
   
   
 function newframe(name,url){
