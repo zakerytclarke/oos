@@ -72,10 +72,10 @@ display:none;
 <div id="prgmbar" style="float:left;">
 </div>
 <div style="margin:5px;position:fixed;float:right;top:0;right:0;z-index:100;background-color:silver;width:10vw;height:10vw;border-radius:50%;text-align:center;border:3px solid black;width:150px;height:150px;">
-<h3>
+<h3 id="date">
 10/23/17
 </h3>
-<h3>
+<h3 id="time">
 11:24
 </h3>
 </div>
@@ -126,6 +126,9 @@ document.getElementById("bg").style.height=window.innerHeight;
 }else{
 document.getElementById("bg").style.width=window.innerWidth;
 }
+setInterval(function(){ uptiime(); }, 1000);  
+  
+  
 function newframe(name,url){
 //document.getElementById("prgmbar").innerHTML=document.getElementById("prgmbar").innerHTML+name;
 window.open(url,name,'width=500px,height=500px');
@@ -139,6 +142,12 @@ document.getElementById("appbox").style.display="none";
 document.getElementById("arrow").style.display="none";
 }
 }
+  
+function uptime(){
+
+var d = new Date();
+document.getElementById("time").innerHTML=d.getHours()+":"+d.getMinutes(); 
+}  
 </script>
 </body>
 </html>
