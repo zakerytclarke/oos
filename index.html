@@ -135,6 +135,8 @@ setInterval(function(){ uptime(); }, 500);
     else {
         document.getElementById("bg").src=readcookie("bgi");  
         document.getElementById("bgw").src=readcookie("bgw");
+        document.getElementById("bgtxt").value=readcookie("bgi");
+        document.getElementById("bgtxtw").value=readcookie("bgw");
     }
   
 function readcookie(name) {
