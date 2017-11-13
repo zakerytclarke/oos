@@ -188,7 +188,10 @@ document.getElementById("arrow").style.display="none";
   
 function uptime(){
 var d = new Date();
-document.getElementById("time").innerHTML=d.getHours()+":"+d.getMinutes();
+var m=d.getMinutes();  
+if(m<10){
+m="0"+m;  
+document.getElementById("time").innerHTML=d.getHours()+":"+m;
 var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth()+1; //January is 0!
