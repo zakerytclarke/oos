@@ -62,7 +62,7 @@ display:none;
 <iframe id="bgw" src="https://codepen.io/zakerytclarke/full/WXpZVL/" style="position:fixed;top:-15%;left:-10%;z-index:-10;width:110vw;height:115vh;">
 </iframe>
 <div id="arrow" class="arrow-up" style="left:4%;"></div>
-<div id="sarrow" class="arrow-up" style="right:4%;"></div>  
+<div id="sarrow" class="arrow-up" style="left:96%;"></div>  
 <div class-"appcontainer" style="width:10vw;">
 <img src="oo.jpg" class="appimg" style="border:3px solid black;width:150px;" onclick="menu()">
 </div>
@@ -162,7 +162,7 @@ function newframe(name,url){
 //document.getElementById("prgmbar").innerHTML=document.getElementById("prgmbar").innerHTML+name;
 window.open(url,name,'width=500px,height=500px');
 }
-function menu(){
+function settings(){
 if(document.getElementById("setbox").style.display=="none"){
 document.getElementById("setbox").style.display="block";
 document.getElementById("sarrow").style.display="block";
@@ -172,7 +172,7 @@ document.getElementById("sarrow").style.display="none";
 }
 }
 
-function settings(){
+function menu(){
 if(document.getElementById("appbox").style.display=="none"){
 document.getElementById("appbox").style.display="block";
 document.getElementById("arrow").style.display="block";
