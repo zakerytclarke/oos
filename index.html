@@ -141,13 +141,13 @@ document.getElementById("bg").style.height=window.innerHeight;
 document.getElementById("bg").style.width=window.innerWidth;
 }
 if (typeof(Storage) !== "undefined") {
-    if(localStorage.getItem("apps")!="null"){
+    if(localStorage.getItem("apps")!=="null"){
       alert("Not Found");
     }else{
       alert("Liar!");
     }  
-} else {
-    alert"::OOS::\nUnfortunately your browser does not provide Webstorage support so your session will not be saved. Please consider switching to Chrome or another modern browser.");
+}else{
+    //alert"::OOS::\nUnfortunately your browser does not provide Webstorage support so your session will not be saved. Please consider switching to Chrome or another modern browser.");
 }  
 setInterval(function(){ uptime(); }, 500);  
     var myCookie = getCookie("bgi");
