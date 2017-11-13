@@ -50,7 +50,6 @@ position:fixed;
 width: 0; 
 height: 0;
 top:21%;
-left:4%;
 z-index:99;
 border-left:40px solid transparent;
 border-right:40px solid transparent;
@@ -62,13 +61,14 @@ display:none;
 <img id="bg" src="bg4.jpg" style="position:fixed;top:0%;left:0;z-index:-100">
 <iframe id="bgw" src="https://codepen.io/zakerytclarke/full/WXpZVL/" style="position:fixed;top:-15%;left:-10%;z-index:-10;width:110vw;height:115vh;">
 </iframe>
-<div id="arrow" class="arrow-up"></div>
+<div id="arrow" class="arrow-up" style="left:4%;"></div>
+<div id="sarrow" class="arrow-up" style="right:4%;"></div>  
 <div class-"appcontainer" style="width:10vw;">
 <img src="oo.jpg" class="appimg" style="border:3px solid black;width:150px;" onclick="menu()">
 </div>
 <div id="prgmbar" style="float:left;">
 </div>
-<div style="margin:5px;position:fixed;float:right;top:0;right:0;z-index:100;background-color:silver;width:10vw;height:10vw;border-radius:50%;text-align:center;border:3px solid black;width:150px;height:150px;">
+<div onclick="settings()" style="margin:5px;position:fixed;float:right;top:0;right:0;z-index:100;background-color:#878a8e;width:10vw;height:10vw;border-radius:50%;text-align:center;border:3px solid black;width:150px;height:150px;">
 <h3 id="date">
 10/23/17
 </h3>
@@ -112,7 +112,7 @@ display:none;
 
   
   
-<div id="setbox" class="appframe" style="right:4vw;">
+<div id="setbox" class="appframe" style="right:4vw;display:none;">
 
 <div class="appcontainer" onclick="newframe('About','https://github.com/zakerytclarke/oos')">
 <img class="appimg" src="appgithub.gif">
@@ -163,6 +163,16 @@ function newframe(name,url){
 window.open(url,name,'width=500px,height=500px');
 }
 function menu(){
+if(document.getElementById("setbox").style.display=="none"){
+document.getElementById("setbox").style.display="block";
+document.getElementById("sarrow").style.display="block";
+}else{
+document.getElementById("setbox").style.display="none";
+document.getElementById("sarrow").style.display="none";
+}
+}
+
+function settings(){
 if(document.getElementById("appbox").style.display=="none"){
 document.getElementById("appbox").style.display="block";
 document.getElementById("arrow").style.display="block";
@@ -170,7 +180,8 @@ document.getElementById("arrow").style.display="block";
 document.getElementById("appbox").style.display="none";
 document.getElementById("arrow").style.display="none";
 }
-}
+} 
+  
   
 function uptime(){
 var d = new Date();
