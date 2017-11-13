@@ -9,7 +9,7 @@
 width:500px;
 overflow:hidden;
 position:absolute;
-z-index:1000;
+z-index:101;
 background-color:red;
 }
 .toolbar{
@@ -68,7 +68,7 @@ display:none;
 </div>
 <div id="prgmbar" style="float:left;">
 </div>
-<div onclick="settings()" style="margin:5px;position:fixed;float:right;top:0;right:0;z-index:100;background-color:#878a8e;width:10vw;height:10vw;border-radius:50%;text-align:center;border:3px solid black;width:150px;height:150px;">
+<div onclick="settings()" style="margin:5px;position:fixed;float:right;top:0;right:0;z-index:99;background-color:#878a8e;width:10vw;height:10vw;border-radius:50%;text-align:center;border:3px solid black;width:150px;height:150px;">
 <h3 id="date">
 10/23/17
 </h3>
@@ -111,6 +111,9 @@ display:none;
 <div class="appcontainer" onclick="newframe('Excel','https://office.live.com/start/Excel.aspx')">
 <img class="appimg" src="appexcel.ico">
 </div>
+<div class="appcontainer" onclick="addapp()">
+<img class="appimg" src="addapp.png">
+</div>  
 </div>
 
   
