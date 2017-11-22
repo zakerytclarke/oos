@@ -56,7 +56,8 @@ border-right:40px solid transparent;
 border-bottom:40px solid silver;
 display:none;
 }
-
+<body id="body">
+  
 </style>
 <img id="bg" src="bg4.jpg" style="position:fixed;top:0%;left:0;z-index:-100">
 <iframe id="bgw" src="https://codepen.io/zakerytclarke/full/aVWzrQ" style="position:fixed;top:-15%;left:-10%;z-index:-10;width:110vw;height:115vh;">
@@ -121,7 +122,7 @@ Live Wallpaper
   
   
   
-  
+  </body>  
 <script>
 if(window.innerHeight<window.innerWidth){
 document.getElementById("bg").style.height=window.innerHeight;
@@ -152,6 +153,19 @@ setInterval(function(){ uptime(); }, 500);
         document.getElementById("bgtxt").value=readcookie("bgi");
         document.getElementById("bgtxtw").value=readcookie("bgw");
     }
+  
+  var i = document.getElementById("body");
+
+// go full-screen
+if (i.requestFullscreen) {
+	i.requestFullscreen();
+} else if (i.webkitRequestFullscreen) {
+	i.webkitRequestFullscreen();
+} else if (i.mozRequestFullScreen) {
+	i.mozRequestFullScreen();
+} else if (i.msRequestFullscreen) {
+	i.msRequestFullscreen();
+}
   
 function readcookie(name) {
     var nameEQ = name + "=";
