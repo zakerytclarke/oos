@@ -289,7 +289,8 @@ function getCookie(name) {
 
 function logout(){
 document.getElementById("logintab").style.display="block";
-document.getElementById("setbox").style.display="none";  	
+document.getElementById("setbox").style.display="none";  
+document.getElementById("sarrow").style.display="none";	
 	
 }
 	
@@ -299,6 +300,7 @@ var pass=document.getElementById("password").value;
 if(user!=""&&pass!=""){
 	if(user=="guest"&&pass=="password1234"){
 		document.getElementById("logintab").style.display="none";  
+		
 	}else{
 		alert("Incorrect Password");
 	}	
